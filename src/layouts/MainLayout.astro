@@ -1,0 +1,109 @@
+---
+import HTMLLayout from '../layouts/HTMLLayout.astro';
+---
+
+<HTMLLayout title="Spotifolio">
+    <main>
+        <div class="left-panel">
+            <nav class="rounded">
+                <ul class="nav-main-list rounded">
+                    <li class="nav-main-list-item"><a href="index.html">[ ] Experience</a></li>
+                    <li class="nav-main-list-item"><a href="education.html">[ ] Education</a></li>
+                    <li class="nav-main-list-item"><a href="projects.html">[ ] Projects</a></li>
+                    <li class="nav-main-list-item"><a href="about-me.html">[ ] About me</a></li>
+                </ul>
+            </nav>
+            <div class=" skills-container rounded">
+                <ul>
+                    <li>Skill 1</li>
+                    <li>Skill 2</li>
+                    <li>Skill 3</li>
+                    <li>Skill 4</li>
+                    <li>Skill 5</li>
+                    <li>Skill 6</li>
+                </ul>
+            </div>
+        </div>
+        <div class="spacing main-panel rounded">
+            <header style="padding: 5em 1em 1em 1em; flex-direction: row">
+                <div style="display: flex; flex-direction: row; background-color: aqua">
+                    <div style="height: 200px; width: 200px; background-color: orange "></div>
+                    <div style="background-color: blueviolet; flex: 1; margin-left: 1em; flex-direction: column;">
+                        <h1 style="flex: 1">Luciano Flores</h1>
+                        <span style="align-self: flex-end">Fullstack developer / Software engineer</span>
+                    </div>
+                </div>
+            </header>
+            <div class="main-content" style="flex-direction: row">
+                <slot />
+            </div>
+        </div>
+    </main>
+</HTMLLayout>
+
+<style>
+    main {
+        /*background-color: white;*/
+        height: 98vh;
+        display: flex;
+        flex-direction: row;
+    }
+    .rounded {
+        border-radius: 1em;
+    }
+    .spacing {
+        padding: 1em;
+    }
+    .left-panel {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-right: 1em;
+        color: rgb(var(--light-gray));
+    }
+    nav {
+        margin-bottom: 1em;
+        background-color: rgb(var(--dark-gray));
+    }
+    .nav-main-list {
+        list-style: none; /* Remove bullets from the list */
+    }
+
+    .nav-main-list-item {
+        color: rgb(var(--light-gray));
+    }
+
+    .nav-main-list-item a {
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit text color from the parent list item */
+    }
+
+    .nav-main-list-item:hover {
+        color: rgb(var(--accent)); /* Change the text color on hover to your desired accent color */
+    }
+
+    .skills-container {
+        flex: 1;
+        background-color: rgb(var(--dark-gray));
+    }
+    .main-panel {
+        display: flex;
+        flex-direction: column;
+        flex: 4;
+        background-color: rgb(var(--dark-gray));
+        color: white;
+    }
+    header {
+        flex: 1;
+        background-color: lightpink;
+    }
+    h1 {
+        font-size: 64px;
+    }
+    .main-content {
+        flex: 3;
+        background-color: lightblue;
+    }
+
+</style>
