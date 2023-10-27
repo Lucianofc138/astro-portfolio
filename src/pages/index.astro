@@ -1,16 +1,49 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import data from '../data.json';
 ---
 
 <MainLayout>
 	<main>
-		Experience
 		<table>
+			<thead>
+			<tr>
+				<th>#</th>
+				<th>Role / Position</th>
+				<th>Company</th>
+				<th>Start date</th>
+				<th>Finish date</th>
+			</tr>
+			</thead>
+			<tbody>
+				{data.experience.map((item, index) => (
+					<tr>
+						<th>{index + 1}</th>
+						<td>{item.role}</td>
+						<td>{item.company}</td>
+						<td>{item.startDate}</td>
+						<td>{item.endDate}</td>
+					</tr>
+				))}
+			</tbody>
 		</table>
 	</main>
 </MainLayout>
 
 <style>
 	main {
+		font-style: normal;
+	}
+	table {
+		/*background-color: lightpink;*/
+		width: 100%;
+		border-collapse: collapse;
+	}
+	thead {
+		border-bottom: 1px solid rgb(var(--light-gray));
+	}
+	th, td {
+		padding: 8px;
+		text-align: left;
 	}
 </style>

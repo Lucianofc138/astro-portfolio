@@ -24,14 +24,12 @@ import HTMLLayout from '../layouts/HTMLLayout.astro';
                 </ul>
             </div>
         </div>
-        <div class="spacing main-panel rounded">
-            <header style="padding: 5em 1em 1em 1em; flex-direction: row">
-                <div style="display: flex; flex-direction: row; background-color: aqua">
-                    <div style="height: 200px; width: 200px; background-color: orange "></div>
-                    <div style="background-color: blueviolet; flex: 1; margin-left: 1em; flex-direction: column;">
-                        <h1 style="flex: 1">Luciano Flores</h1>
-                        <span style="align-self: flex-end">Fullstack developer / Software engineer</span>
-                    </div>
+        <div class="right-panel" style="border-radius: 1em">
+            <header>
+                <div class="header-image"></div>
+                <div class="header-info">
+                    <h1 style="flex: 1">Luciano Flores</h1>
+                    <span style="align-self: flex-end">Fullstack developer / Software engineer</span>
                 </div>
             </header>
             <div class="main-content" style="flex-direction: row">
@@ -47,6 +45,7 @@ import HTMLLayout from '../layouts/HTMLLayout.astro';
         height: 98vh;
         display: flex;
         flex-direction: row;
+        gap: 1em;
     }
     .rounded {
         border-radius: 1em;
@@ -58,8 +57,8 @@ import HTMLLayout from '../layouts/HTMLLayout.astro';
         display: flex;
         flex: 1;
         flex-direction: column;
+        gap: 1em;
         justify-content: space-between;
-        margin-right: 1em;
         color: rgb(var(--light-gray));
     }
     nav {
@@ -87,23 +86,39 @@ import HTMLLayout from '../layouts/HTMLLayout.astro';
         flex: 1;
         background-color: rgb(var(--dark-gray));
     }
-    .main-panel {
+    .right-panel {
         display: flex;
         flex-direction: column;
         flex: 4;
         background-color: rgb(var(--dark-gray));
         color: white;
+        overflow: clip;
     }
     header {
+        /*background-color: lightpink;*/
+        display: flex;
+        flex-direction: row;
         flex: 1;
-        background-color: lightpink;
+        padding: 2em;
+        gap: 1em;
+    }
+    .header-image {
+        background-color: orange;
+        height: 200px;
+        width: 200px;
+        margin-right: 1em;
+    }
+    .header-info {
+        /*background-color: blueviolet;*/
+        flex: 1;
+        flex-direction: column;
     }
     h1 {
         font-size: 64px;
     }
     .main-content {
         flex: 3;
-        background-color: lightblue;
+        padding: 2em;
     }
 
 </style>

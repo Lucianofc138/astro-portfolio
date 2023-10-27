@@ -1,0 +1,28 @@
+{
+  "experience": [
+    {
+      "role": "Fullstack developer",
+      "company": "Aikologic",
+      "startDate": "November 2022",
+      "endDate": "-"
+    },
+    {
+      "role": "Fullstack developer",
+      "company": "Wildsense",
+      "startDate": "April 2022",
+      "endDate": "October 2022"
+    },
+    {
+      "role": "2nd internship",
+      "company": "Wildsense",
+      "startDate": "January 2022",
+      "endDate": "March 2022"
+    },
+    {
+      "role": "Internship and thesis project",
+      "company": "Wildsense",
+      "startDate": "January 2021",
+      "endDate": "December 2023"
+    }
+  ]
+}
