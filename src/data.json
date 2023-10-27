@@ -4,25 +4,29 @@
       "role": "Fullstack developer",
       "company": "Aikologic",
       "startDate": "November 2022",
-      "endDate": "-"
+      "endDate": "-",
+      "description": "Description1 description  description description description description description description description description description description description"
     },
     {
       "role": "Fullstack developer",
       "company": "Wildsense",
       "startDate": "April 2022",
-      "endDate": "October 2022"
+      "endDate": "October 2022",
+      "description": "Description2 description  description description description description description description description description description description description"
     },
     {
-      "role": "2nd internship",
+      "role": "Internship",
       "company": "Wildsense",
       "startDate": "January 2022",
-      "endDate": "March 2022"
+      "endDate": "March 2022",
+      "description": "Description3 description  description description description description description description description description description description description"
     },
     {
       "role": "Internship and thesis project",
       "company": "Wildsense",
       "startDate": "January 2021",
-      "endDate": "December 2023"
+      "endDate": "December 2023",
+      "description": "Description4 description  description description description description description description description description description description description"
     }
   ]
 }

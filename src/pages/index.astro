@@ -17,8 +17,8 @@ import data from '../data.json';
 			</thead>
 			<tbody>
 				{data.experience.map((item, index) => (
-					<tr>
-						<th>{index + 1}</th>
+					<tr class="row">
+						<td class="row-index">{index + 1}</td>
 						<td>{item.role}</td>
 						<td>{item.company}</td>
 						<td>{item.startDate}</td>
@@ -27,12 +27,45 @@ import data from '../data.json';
 				))}
 			</tbody>
 		</table>
+		<section id="experience-description">
+			sadf asdfa
+		</section>
 	</main>
 </MainLayout>
+<script>
+	import data from '../data.json';
+
+	function onHoverExperience(event: Event, index: number): void {
+		console.log("ON HOVER EXPERIENCE: ", index, event);
+		console.log("DATA: ", data.experience[index]);
+
+		// Set the description in the section
+		const descriptionSection: HTMLElement = document.getElementById("experience-description");
+		descriptionSection.innerText = data.experience[index].description;
+	}
+
+	function onUnhoverExperience(event: Event): void {
+		// Reset the description to empty when unhovered
+		const descriptionSection: HTMLElement = document.getElementById("experience-description");
+		descriptionSection.innerText = "";
+	}
+
+	const rows: NodeListOf<Element> = document.querySelectorAll(".row");
+
+	rows.forEach((row, index) => {
+		row.addEventListener("mouseenter", e => onHoverExperience(e, index));
+	});
+	rows.forEach((row, index) => {
+		row.addEventListener("mouseleave", e => onUnhoverExperience(e));
+	});
+</script>
 
 <style>
 	main {
 		font-style: normal;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
 	}
 	table {
 		/*background-color: lightpink;*/
@@ -43,7 +76,10 @@ import data from '../data.json';
 		border-bottom: 1px solid rgb(var(--light-gray));
 	}
 	th, td {
-		padding: 8px;
+		padding: 1em;
 		text-align: left;
+	}
+	.row:hover {
+		background-color: rgb(var(--gray));
 	}
 </style>
