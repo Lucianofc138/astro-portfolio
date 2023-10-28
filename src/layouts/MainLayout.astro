@@ -7,10 +7,30 @@ import HTMLLayout from '../layouts/HTMLLayout.astro';
         <div class="left-panel">
             <nav class="rounded">
                 <ul class="nav-main-list rounded">
-                    <li class="nav-main-list-item"><a href="index.html">[ ] Experience</a></li>
-                    <li class="nav-main-list-item"><a href="education.html">[ ] Education</a></li>
-                    <li class="nav-main-list-item"><a href="projects.html">[ ] Projects</a></li>
-                    <li class="nav-main-list-item"><a href="about-me.html">[ ] About me</a></li>
+                    <li class="nav-main-list-item">
+                        <a href="index.html">
+                            <span class="material-icons">work_history</span>
+                            Experience
+                        </a>
+                    </li>
+                    <li class="nav-main-list-item">
+                        <a href="education.html">
+                            <span class="material-icons">school</span>
+                            Education
+                        </a>
+                    </li>
+                    <li class="nav-main-list-item">
+                        <a href="projects.html">
+                            <span class="material-icons">dataset</span>
+                            Projects
+                        </a>
+                    </li>
+                    <li class="nav-main-list-item">
+                        <a href="about-me.html">
+                            <span class="material-icons">person</span>
+                            About me
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class=" skills-container rounded">
@@ -27,6 +47,7 @@ import HTMLLayout from '../layouts/HTMLLayout.astro';
         <div class="right-panel" style="border-radius: 1em">
             <header>
                 <div class="header-image" />
+                <!-- <img class="header-image" src="photo.png" /> -->
                 <div class="header-info">
                     <h1 style="flex: 1">Luciano Flores</h1>
                     <span style="align-self: flex-end">Fullstack developer / Software engineer</span>
@@ -63,9 +84,13 @@ import HTMLLayout from '../layouts/HTMLLayout.astro';
     }
     nav {
         background-color: rgb(var(--dark-gray));
+        padding: 0.5em;
     }
     .nav-main-list {
         list-style: none; /* Remove bullets from the list */
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
     }
 
     .nav-main-list-item {
@@ -74,7 +99,11 @@ import HTMLLayout from '../layouts/HTMLLayout.astro';
 
     .nav-main-list-item a {
         text-decoration: none; /* Remove underline */
+        font-size: 20px;
         color: inherit; /* Inherit text color from the parent list item */
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
     }
 
     .nav-main-list-item:hover {
