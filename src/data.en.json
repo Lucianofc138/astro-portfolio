@@ -28,5 +28,119 @@
       "endDate": "December 2023",
       "description": "As part of my industrial internship and academic project at Wildsense, I had the privilege of contributing to a groundbreaking endeavor that involved the integration of a multimodal sensing IoT system with robotics and computer vision, specifically tailored for smart sensing in the agro-industry. This project was part of the FONDEF ANID ID19I10032 initiative, focusing on agricultural applications.\n\nThis experience spanned from January 2021 to December 2021, allowing me to engage in the agile development of a mobile application designed for tracking plant and crop conditions, a critical tool for agronomists. My contributions encompassed the development of both a mobile application using React Native and a web administration platform built with React. We seamlessly utilized Firebase for the backend, ensuring robust functionality and data management.\n\nThis opportunity not only deepened my expertise in mobile app development and web administration but also provided hands-on experience with cutting-edge technology in the field of agriculture. I was proud to be part of a project that leveraged IoT, robotics, and computer vision to benefit the agro-industry, a field that continuously demands innovation and advanced solutions."
     }
+  ],
+  "education": [
+    {
+      "degree": "Electronic Engineering with major in Computer Science",
+      "institution": "Universidad Técnica Federico Santa María",
+      "startDate": "March 2016",
+      "endDate": "April 2022",
+      "description": ""
+    },
+    {
+      "degree": "School",
+      "institution": "Scuola Italiana Arturo Dell'Oro Valparaíso",
+      "startDate": "-",
+      "endDate": "December 2015",
+      "description": ""
+    }
+  ],
+  "projects": [
+    {
+      "name": "Stocky",
+      "description": "[ELO328]: Procesamiento digital de imágenes\nOctubre - Diciembre de 2020\nDesarrollo de una solución basada en visión por computadora, para supermercados y otros establecimientos similares, que provee de alertas cuando un producto se encuentra sin stock o fuera de lugar en las repisas."
+    },
+    {
+      "name": "Smart Scheduler USM",
+      "description": "Independent\nSeptiembre - Noviembre 2019\nDesarrollo de una herramienta para estudiantes de la UTFSM, que busca ayudar con la toma de ramos cada semestre, optimizando el horario final, evitando los topes de horarios entre las distintas asignaturas."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "type": "programming-language",
+      "keywords": ["python", "py"]
+    },
+    {
+      "name": "C++",
+      "type": "programming-language",
+      "keywords": ["c++", "plus", "memory"]
+    },
+    {
+      "name": "Javascript",
+      "type": "programming-language",
+      "keywords": ["js", "web", "webdev", "fullstack"]
+    },
+    {
+      "name": "React",
+      "type": "library",
+      "keywords": ["react", "js", "javascript", "framework", "reactjs", "react.js"]
+    },
+    {
+      "name": "Next.js",
+      "type": "framework",
+      "keywords": ["react", "js", "javascript", "framework", "reactjs", "react.js"]
+    },
+    {
+      "name": "Django",
+      "type": "framework",
+      "keywords": ["python", "py", "backend", "mvvc", "mvc", "api"] },
+    {
+      "name": "Django Rest Framework",
+      "type": "framework",
+      "keywords": ["python", "py", "backend", "api"]
+    },
+    {
+      "name": "Node.js",
+      "type": "runtime",
+      "keywords": ["Node.js", "js", "javascript", "runtime", "v8"]
+    },
+    {
+      "name": "HTML",
+      "type": "language",
+      "keywords": ["HTML", "HTML5"] },
+    {
+      "name": "CSS",
+      "type": "language",
+      "keywords": ["css"]
+    },
+    {
+      "name": "React Native",
+      "type": "framework",
+      "keywords": ["react", "js", "javascript", "framework", "reactjs", "react.js", "mobile", "android", "apple", "ios", "native", "hybrid"] },
+    {
+      "name": "SQL",
+      "type": "language",
+      "keywords": ["sql", "query", "queries", ""] },
+    {
+      "name": "SQL Server",
+      "type": "databases" },
+    {
+      "name": "Pandas",
+      "type": "dataAnalysis",
+      "keywords": ["Pandas Library"] },
+    {
+      "name": "NumPy",
+      "type": "dataAnalysis" },
+    {
+      "name": "scikit-learn",
+      "type": "dataAnalysis",
+      "keywords": ["scikit-learn Library"] },
+    {
+      "name": "OpenCV",
+      "type": "computerVision",
+      "keywords": ["OpenCV", "OpenCV Library"] },
+    {
+      "name": "Git",
+      "type": "versionControl",
+      "keywords": ["Git Version Control"] },
+    {
+      "name": "Linux",
+      "type": "operatingSystems",
+      "keywords": ["Linux OS"] },
+    {
+      "name": "Firebase",
+      "type": "cloudServices",
+      "keywords": ["Firebase Cloud Services"] }
   ]
 }

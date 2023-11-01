@@ -1,14 +1,44 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import data from '../data.en.json';
+import Table from '../components/Table.astro'
+
+const headers: string[] = ["#", "Degree", "Institution", "Start date", "Finish date"];
+const rowKeys: string[] = ["degree", "institution", "startDate", "endDate"];
+const rowsInfo: object[] = data.education;
 ---
 
 <MainLayout>
 	<main>
-		Education
+		<Table
+			headers={headers}
+			rowKeys={rowKeys}
+			rowsInfo={rowsInfo}
+			setDescription="setDescriptionText"
+		/>
 	</main>
 </MainLayout>
-
 <style>
 	main {
+		font-style: normal;
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		gap: 1em;
+	}
+	table {
+		/*background-color: lightpink;*/
+		width: 100%;
+		border-collapse: collapse;
+	}
+	thead {
+		border-bottom: 1px solid rgb(var(--light-gray));
+	}
+	th, td {
+		padding: 1em;
+		text-align: left;
+	}
+	.row:hover {
+		background-color: rgb(var(--gray));
 	}
 </style>

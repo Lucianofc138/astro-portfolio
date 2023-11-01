@@ -1,67 +1,28 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import data from '../data.json';
+import data from '../data.en.json';
+import Table from '../components/Table.astro'
+
+const headers: string[] = ["#", "Role / Position", "Company", "Start date", "Finish date"];
+const rowKeys: string[] = ["role", "company", "startDate", "endDate"];
+const rowsInfo: object[] = data.experience;
 ---
 
 <MainLayout>
 	<main>
-		<table>
-			<thead>
-			<tr>
-				<th>#</th>
-				<th>Role / Position</th>
-				<th>Company</th>
-				<th>Start date</th>
-				<th>Finish date</th>
-			</tr>
-			</thead>
-			<tbody>
-				{data.experience.map((item, index) => (
-					<tr class="row">
-						<td class="row-index">{index + 1}</td>
-						<td>{item.role}</td>
-						<td>{item.company}</td>
-						<td>{item.startDate}</td>
-						<td>{item.endDate}</td>
-					</tr>
-				))}
-			</tbody>
-		</table>
-		<section id="experience-description" />
+		<Table
+			headers={headers}
+			rowKeys={rowKeys}
+			rowsInfo={rowsInfo}
+			setDescription="setDescriptionText"
+		/>
 	</main>
 </MainLayout>
-<script>
-	import data from '../data.json';
-
-	function onHoverExperience(event: Event, index: number): void {
-		console.log("ON HOVER EXPERIENCE: ", index, event);
-		console.log("DATA: ", data.experience[index]);
-
-		// Set the description in the section
-		const descriptionSection: HTMLElement = document.getElementById("experience-description");
-		descriptionSection.innerText = data.experience[index].description;
-	}
-
-	function onUnhoverExperience(event: Event): void {
-		// Reset the description to empty when unhovered
-		const descriptionSection: HTMLElement = document.getElementById("experience-description");
-		descriptionSection.innerText = "";
-	}
-
-	const rows: NodeListOf<Element> = document.querySelectorAll(".row");
-
-	rows.forEach((row, index) => {
-		row.addEventListener("mouseenter", e => onHoverExperience(e, index));
-	});
-	rows.forEach((row, index) => {
-		row.addEventListener("mouseleave", e => onUnhoverExperience(e));
-	});
-</script>
-
 <style>
 	main {
 		font-style: normal;
 		display: flex;
+		flex: 1;
 		flex-direction: column;
 		gap: 1em;
 	}

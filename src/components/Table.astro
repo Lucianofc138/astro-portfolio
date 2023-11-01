@@ -1,0 +1,81 @@
+---
+import data from "../data.en.json";
+interface Props {
+    headers: string[];
+    rowKeys: string[];
+    rowsInfo: object[];
+}
+
+const { headers, rowKeys, rowsInfo} = Astro.props;
+---
+
+<main>
+    <table>
+        <thead>
+        <tr>
+            {headers.map((item) => (
+               <td>{item}</td>
+            ))}
+        </tr>
+        </thead>
+        <tbody>
+        {rowsInfo.map((item, index) => (
+                <tr class="row" data-description={item.description}>
+                    <td>{index + 1}</td>
+                    {rowKeys.map(k => (
+                        <td>{item[k]}</td>
+                    ))}
+                </tr>
+        ))}
+        </tbody>
+    </table>
+    <section id="row-description" />
+</main>
+<script>
+    function setDescription(text: string): string {
+        const descriptionSection: HTMLElement = document.getElementById("row-description");
+        descriptionSection.innerText = text;
+    }
+
+    function onHoverExperience(event: Event): void {
+        const description = event.target.getAttribute("data-description");
+        setDescription(description);
+    }
+
+    function onUnhoverExperience(event: Event): void {
+        setDescription("");
+
+    }
+
+    const rows: NodeListOf<Element> = document.querySelectorAll(".row");
+
+    rows.forEach((row, index) => {
+        row.addEventListener("mouseenter", e => onHoverExperience(e, index));
+    });
+    rows.forEach((row, index) => {
+        row.addEventListener("mouseleave", e => onUnhoverExperience(e));
+    });
+</script>
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-between;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    thead {
+        border-bottom: 1px solid rgb(var(--light-gray));
+    }
+    th, td {
+        padding: 1em;
+        text-align: left;
+    }
+    .row:hover {
+        background-color: rgb(var(--gray));
+    }
+</style>
+
