@@ -1,7 +1,11 @@
 ---
-
+interface Skill {
+    type: string;
+    keywords: string[];
+    name: string;
+}
 interface Props {
-    skills: object[];
+    skills: Skill[];
 }
 
 const { skills= [] } = Astro.props;
@@ -15,7 +19,7 @@ const { skills= [] } = Astro.props;
     />
     <ul>
         {skills.map((skill, index) => (
-                <li class="skill-item" skill-type={skill.type} title={skill.keywords} keywords={skill.keywords}>
+                <li class="skill-item" skill-type={skill.type} title={skill.name} keywords={skill.keywords}>
                     {skill.name}
                 </li>
         ))}
