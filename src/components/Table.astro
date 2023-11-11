@@ -2,7 +2,7 @@
 interface Props {
     headers: string[];
     rowKeys: string[];
-    rowsInfo: object[];
+    rowsInfo: Record<string, any>;
 }
 
 const { headers, rowKeys, rowsInfo} = Astro.props;
@@ -18,11 +18,11 @@ const { headers, rowKeys, rowsInfo} = Astro.props;
         </tr>
         </thead>
         <tbody>
-        {rowsInfo.map((item, index) => (
-                <tr class="row" data-description={item.description}>
+        {rowsInfo.map((row: any, index: number) => (
+                <tr class="row" data-description={row.description}>
                     <td>{index + 1}</td>
                     {rowKeys.map(k => (
-                        <td>{item[k]}</td>
+                            <td>{row.hasOwnProperty(k) ? row[k] : ''}</td>
                     ))}
                 </tr>
         ))}
@@ -31,31 +31,37 @@ const { headers, rowKeys, rowsInfo} = Astro.props;
     <section id="row-description" />
 </main>
 <script>
-    function setDescription(text: string): string {
-        const descriptionSection: HTMLElement = document.getElementById("row-description");
-        descriptionSection.innerHTML = text;
+    function setDescription(text: string) {
+        const descriptionSection: HTMLElement | null = document.getElementById("row-description");
+        if (descriptionSection) {
+            descriptionSection.innerHTML = text;
+        }
     }
 
     function onHoverExperience(event: Event): void {
-        const description: string = event.target.getAttribute("data-description");
+        const target = event.target as HTMLElement | null;
+
+        if (!target) {
+            return;
+        }
+        const description: string = target?.getAttribute('data-description') ?? "";
         const richTextDescription: string = description.replace(/\*([^*]+)\*/g, '<strong>$1</strong>');
         const textByParagraphs: string[] = richTextDescription.split("\n");
         const htmlByParagraphs: string = textByParagraphs.map(t => "<p>" + t + "</p>").join("");
         setDescription(htmlByParagraphs);
     }
 
-    function onUnhoverExperience(event: Event): void {
+    function onUnhoverExperience(): void {
         setDescription("");
-
     }
 
     const rows: NodeListOf<Element> = document.querySelectorAll(".row");
 
-    rows.forEach((row, index) => {
-        row.addEventListener("mouseenter", e => onHoverExperience(e, index));
+    rows.forEach((row: Element) => {
+        row.addEventListener("mouseenter", e => onHoverExperience(e));
     });
-    rows.forEach((row, index) => {
-        row.addEventListener("mouseleave", e => onUnhoverExperience(e));
+    rows.forEach((row: Element) => {
+        row.addEventListener("mouseleave", () => onUnhoverExperience());
     });
 </script>
 <style>
