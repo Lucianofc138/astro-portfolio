@@ -1,10 +1,16 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import data from '../data.en.json';
+
+const aboutMe: string = data['about-me'];
+const richTextDescription: string = aboutMe.replace(/\*([^*]+)\*/g, '<strong>$1</strong>');
+const textByParagraphs: string[] = richTextDescription.split("\n");
 ---
 
 <MainLayout>
 	<main>
-		About Me
+		<h2>About Me</h2>
+		{textByParagraphs.map(text => <p>{text}</p>)}
 	</main>
 </MainLayout>
 

@@ -5,14 +5,14 @@
       "company": "Aikologic",
       "startDate": "November 2022",
       "endDate": "-",
-          "description": "Work on diverse mining sector projects, encompassing maintenance, development, and piloting. My role as a change catalyst and software development leader has fostered a culture of continuous improvement. Key technologies include React, VueJS, Jest, Django, Laravel, SQLServer, IIS, Nginx, and Docker."
+          "description": "I've contributed to a variety of projects in the mining sector, engaging in tasks ranging from maintenance to development and piloting. My role extended beyond conventional responsibilities, as I initiated a culture of continuous improvement within the team. This involved sharing insightful resources like \"Clean Code\" and relevant articles, fostering discussions to enhance our collective knowledge.\nNotably, I assumed ownership of a significant project, demonstrating leadership and accountability. Additionally, I managed the releases of our main product, ensuring smooth and efficient deployment processes.\nIn the technological realm, I proficiently employ a range of key technologies, including *React*, *VueJS*, *Jest*, *Django*, *Laravel*, *SQLServer*, *IIS*, *Nginx*, and *Docker*. These tools have been instrumental in achieving project success and maintaining high standards of development."
     },
     {
       "role": "Fullstack developer",
       "company": "Wildsense",
       "startDate": "April 2022",
       "endDate": "October 2022",
-      "description": "In my role, I was responsible for inferring patient vital signs from telemedicine video feeds. This project was part of a 6-month endeavor, during which I played a pivotal role in encapsulating AI models developed by a coworker into an API. This allowed for the seamless consumption of these models from a mobile application, which was instrumental in our telemedicine sessions where video was used. Additionally, I created a Minimum Viable Product (MVP) for video calls, which significantly contributed to the project's success. Managing the video transmission from client to server was another crucial aspect of my responsibilities. I also took the lead in researching and implementing state-of-the-art solutions for the mobile app and camera APIs. Notably, I led a team of two interns during their practical training, fostering their growth and contributing to the project's success. This role represented a unique opportunity to bridge the gap between AI capabilities and practical telemedicine applications, ensuring the project's smooth operation throughout its duration."
+      "description": "The project was a 6-month endeavor, during which I played a pivotal role in encapsulating AI models developed by a coworker into an API. This allowed for the seamless consumption of these models from a mobile application, which was instrumental in our telemedicine sessions where video was used. Additionally, I created a Minimum Viable Product (MVP) for video calls, which significantly contributed to the project's success. Managing the video transmission from client to server was another crucial aspect of my responsibilities. I also took the lead in researching and implementing state-of-the-art solutions for the mobile app and camera APIs.\nNotably, I led a team of two interns during their practical training, fostering their growth and contributing to the project's success. This role represented a unique opportunity to bridge the gap between AI capabilities and practical telemedicine applications, ensuring the project's smooth operation throughout its duration."
     },
     {
       "role": "Internship",
@@ -40,21 +40,32 @@
     {
       "degree": "School",
       "institution": "Scuola Italiana Arturo Dell'Oro Valparaíso",
-      "startDate": "-",
+      "startDate": "March 2003",
       "endDate": "December 2015",
       "description": ""
     }
   ],
   "projects": [
     {
+      "name": "Spotifolio",
+      "startDate": "November 2023",
+      "endDate": "-",
+      "description": "Basically this whole page inspired on Spotify web layout. A place to share my professional information."
+    },
+    {
       "name": "Stocky",
-      "description": "[ELO328]: Procesamiento digital de imágenes\nOctubre - Diciembre de 2020\nDesarrollo de una solución basada en visión por computadora, para supermercados y otros establecimientos similares, que provee de alertas cuando un producto se encuentra sin stock o fuera de lugar en las repisas."
+      "startDate": "October 2020",
+      "endDate": "December 2020",
+      "description": "ELO328 - Digital Image Processing (University project)\nDevelopment of a computer vision-based solution for supermarkets and similar establishments, providing alerts when a product is out of stock or misplaced on the shelves."
     },
     {
       "name": "Smart Scheduler USM",
-      "description": "Independent\nSeptiembre - Noviembre 2019\nDesarrollo de una herramienta para estudiantes de la UTFSM, que busca ayudar con la toma de ramos cada semestre, optimizando el horario final, evitando los topes de horarios entre las distintas asignaturas."
+      "startDate": "September 2019",
+      "endDate": "November 2019",
+      "description": "Independent project\nDevelopment of a tool for students at UTFSM that aims to assist with course selection each semester, optimizing the final schedule and avoiding schedule conflicts between different subjects."
     }
   ],
+  "about-me": "I am interested in constantly learning about new technologies, especially in software development. I have worked with web and mobile apps, computer vision, and data mining. I stand out for being proactive, self-taught, and creative, also enhancing teamwork.",
   "skills": [
     {
       "name": "Python",
@@ -64,7 +75,7 @@
     {
       "name": "C++",
       "type": "programming-language",
-      "keywords": ["c++", "plus", "memory"]
+      "keywords": ["c", "c++", "plus", "memory"]
     },
     {
       "name": "Javascript",
@@ -84,11 +95,11 @@
     {
       "name": "Django",
       "type": "framework",
-      "keywords": ["python", "py", "backend", "mvvc", "mvc", "api"] },
+      "keywords": ["python", "py", "back", "backend", "mvvc", "mvc", "api"] },
     {
       "name": "Django Rest Framework",
       "type": "framework",
-      "keywords": ["python", "py", "backend", "api"]
+      "keywords": ["python", "py", "back", "backend", "api"]
     },
     {
       "name": "Node.js",
@@ -121,22 +132,22 @@
     {
       "name": "Pandas",
       "type": "library",
-      "keywords": ["pandas", "data", "science", "csv", "dataframe"]
+      "keywords": ["python", "py", "pandas", "data", "science", "csv", "dataframe"]
     },
     {
       "name": "NumPy",
       "type": "library",
-      "keywords": ["numpy", "data", "science", "csv", "math"]
+      "keywords": ["python", "py", "numpy", "data", "science", "csv", "math"]
     },
     {
       "name": "scikit-learn",
       "type": "library",
-      "keywords": ["scikit", "learn", "ml", "machine", "learning", "data", "science", "csv", "math"]
+      "keywords": ["python", "py","scikit", "learn", "ml", "machine", "learning", "data", "science", "csv", "math"]
     },
     {
       "name": "OpenCV",
       "type": "library",
-      "keywords": ["opencv", "open", "cv", "computer", "vision", "image", "processing"]
+      "keywords": ["python", "py", "c++", "c", "opencv", "open", "cv", "computer", "vision", "image", "processing"]
     },
     {
       "name": "Git",

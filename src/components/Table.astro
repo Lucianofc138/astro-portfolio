@@ -33,12 +33,15 @@ const { headers, rowKeys, rowsInfo} = Astro.props;
 <script>
     function setDescription(text: string): string {
         const descriptionSection: HTMLElement = document.getElementById("row-description");
-        descriptionSection.innerText = text;
+        descriptionSection.innerHTML = text;
     }
 
     function onHoverExperience(event: Event): void {
-        const description = event.target.getAttribute("data-description");
-        setDescription(description);
+        const description: string = event.target.getAttribute("data-description");
+        const richTextDescription: string = description.replace(/\*([^*]+)\*/g, '<strong>$1</strong>');
+        const textByParagraphs: string[] = richTextDescription.split("\n");
+        const htmlByParagraphs: string = textByParagraphs.map(t => "<p>" + t + "</p>").join("");
+        setDescription(htmlByParagraphs);
     }
 
     function onUnhoverExperience(event: Event): void {
