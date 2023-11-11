@@ -74,12 +74,12 @@
     {
       "name": "React",
       "type": "library",
-      "keywords": ["react", "js", "javascript", "framework", "reactjs", "react.js"]
+      "keywords": ["react", "js", "javascript", "framework", "reactjs", "react.js", "web", "webdev", "fullstack"]
     },
     {
       "name": "Next.js",
       "type": "framework",
-      "keywords": ["react", "js", "javascript", "framework", "reactjs", "react.js"]
+      "keywords": ["react", "js", "javascript", "framework", "reactjs", "react.js", "web", "webdev", "fullstack"]
     },
     {
       "name": "Django",
@@ -98,11 +98,12 @@
     {
       "name": "HTML",
       "type": "language",
-      "keywords": ["HTML", "HTML5"] },
+      "keywords": ["HTML", "HTML5", "web", "webdev", "fullstack"]
+    },
     {
       "name": "CSS",
       "type": "language",
-      "keywords": ["css"]
+      "keywords": ["css", "web", "webdev", "fullstack"]
     },
     {
       "name": "React Native",
@@ -111,36 +112,50 @@
     {
       "name": "SQL",
       "type": "language",
-      "keywords": ["sql", "query", "queries", ""] },
+      "keywords": ["sql", "query", "queries"] },
     {
       "name": "SQL Server",
-      "type": "databases" },
+      "type": "databases",
+      "keywords": ["sql", "query", "queries", "microsoft"]
+    },
     {
       "name": "Pandas",
-      "type": "dataAnalysis",
-      "keywords": ["Pandas Library"] },
+      "type": "library",
+      "keywords": ["pandas", "data", "science", "csv", "dataframe"]
+    },
     {
       "name": "NumPy",
-      "type": "dataAnalysis" },
+      "type": "library",
+      "keywords": ["numpy", "data", "science", "csv", "math"]
+    },
     {
       "name": "scikit-learn",
-      "type": "dataAnalysis",
-      "keywords": ["scikit-learn Library"] },
+      "type": "library",
+      "keywords": ["scikit", "learn", "ml", "machine", "learning", "data", "science", "csv", "math"]
+    },
     {
       "name": "OpenCV",
-      "type": "computerVision",
-      "keywords": ["OpenCV", "OpenCV Library"] },
+      "type": "library",
+      "keywords": ["opencv", "open", "cv", "computer", "vision", "image", "processing"]
+    },
     {
       "name": "Git",
-      "type": "versionControl",
-      "keywords": ["Git Version Control"] },
+      "type": "utils",
+      "keywords": ["git", "version", "control"]
+    },
     {
       "name": "Linux",
-      "type": "operatingSystems",
-      "keywords": ["Linux OS"] },
+      "type": "os",
+      "keywords": ["linux", "os", "open", "source"] },
     {
       "name": "Firebase",
-      "type": "cloudServices",
-      "keywords": ["Firebase Cloud Services"] }
+      "type": "utils",
+      "keywords": ["firebase", "cloud", "service"]
+    },
+    {
+      "name": "Docker",
+      "type": "utils",
+      "keywords": ["container", "deploy", "ci", "cd", "ci/cd"]
+    }
   ]
 }

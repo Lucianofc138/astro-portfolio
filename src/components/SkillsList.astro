@@ -1,0 +1,76 @@
+---
+
+interface Props {
+    skills: object[];
+}
+
+const { skills= [] } = Astro.props;
+---
+<main>
+    <label for="filter-text-input"/>
+    <input
+            id="filter-text-input"
+            type="text"
+            placeholder="Filter skills"
+    />
+    <ul>
+        {skills.map((skill, index) => (
+                <li class="skill-item" skill-type={skill.type} title={skill.keywords} keywords={skill.keywords}>
+                    {skill.name}
+                </li>
+        ))}
+    </ul>
+</main>
+<script>
+    function handleFilter(event: Event): void {
+        const input: string = event.target.value;
+        console.log("handle filter:", input);
+
+        const skillItems: NodeListOf<Element> = Object.values(document.getElementsByClassName("skill-item"));
+        console.log("SKILLS ITEMS: ", skillItems);
+        skillItems.forEach((item) => {
+            const keywords: string[] = item.getAttribute("keywords").split(",");
+            // keywords.push(item.name);
+            // keywords.push(item.type);
+            const shouldHighlight = keywords.some(kw => input.includes(kw));
+
+            if (shouldHighlight) {
+                item.classList.add('highlighted');
+            } else {
+                item.classList.remove('highlighted');
+            }
+        });
+    }
+
+
+    const textInput: Element = document.getElementById("filter-text-input");
+    console.log("TEXT: ", textInput);
+    textInput.addEventListener("input", handleFilter);
+</script>
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+    }
+    input {
+
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    li {
+        background-color: darkslategray;
+        border-radius: 1em;
+        padding: 0 1em 0 1em;
+        margin: 0.5em;
+    }
+
+    .highlighted {
+        background-color: #111111;
+    }
+</style>
+

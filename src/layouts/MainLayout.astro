@@ -1,5 +1,14 @@
 ---
 import HTMLLayout from '../layouts/HTMLLayout.astro';
+import SkillsList from '../components/SkillsList.astro';
+import data from "../data.en.json";
+
+interface Skill {
+    name: string;
+    type: string;
+    keywords: string[];
+}
+const skills: Skill[] = data.skills;
 ---
 
 <HTMLLayout title="Spotifolio">
@@ -34,14 +43,7 @@ import HTMLLayout from '../layouts/HTMLLayout.astro';
                 </ul>
             </nav>
             <div class=" skills-container rounded">
-                <ul>
-                    <li>Skill 1</li>
-                    <li>Skill 2</li>
-                    <li>Skill 3</li>
-                    <li>Skill 4</li>
-                    <li>Skill 5</li>
-                    <li>Skill 6</li>
-                </ul>
+                <SkillsList skills={skills} />
             </div>
         </div>
         <div class="right-panel" style="border-radius: 1em">
