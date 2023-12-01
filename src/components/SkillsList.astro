@@ -30,11 +30,12 @@ const { skills= [] } = Astro.props;
         const input: string = (event?.target as HTMLInputElement)?.value ?? "";
         console.log("handle filter:", input);
 
-        const skillItems: NodeListOf<Element> = document.querySelectorAll(".data-skill-item");
-        // console.log("SKILLS ITEMS: ", skillItems);
+        const skillItems: NodeListOf<Element> = document.querySelectorAll(".skill-item");
+        console.log("SKILLS ITEMS: ", skillItems);
         skillItems.forEach((item: Element): void => {
             const keywords: string[] = item?.getAttribute("data-keywords")?.split(",") ?? [];
-            const shouldHighlight = keywords.some(kw => input.includes(kw));
+            console.log("KWs: ", keywords);
+            const shouldHighlight = keywords.some(kw => input.toLowerCase()?.includes(kw?.toLowerCase()));
 
             if (shouldHighlight) {
                 item.classList.add('highlighted');

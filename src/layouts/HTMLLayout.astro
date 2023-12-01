@@ -23,7 +23,12 @@ const { title } = Astro.props;
 	</body>
 </html>
 <script>
-
+	const isDev = ['localhost', '127.0.0.1'].some(devIP =>
+		window.location.hostname.includes(devIP)
+	);
+	if (!isDev) {
+		console.log = () => {};
+	}
 </script>
 <style is:global>
 	:root {
