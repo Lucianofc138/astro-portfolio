@@ -70,7 +70,6 @@ const skills: Skill[] = data.skills;
 
 <style>
     main {
-        /*background-color: white;*/
         height: 98vh;
         display: flex;
         flex-direction: row;
@@ -157,5 +156,28 @@ const skills: Skill[] = data.skills;
         flex: 3;
         padding: 2em;
     }
+
+    @media (max-width: 768px) {
+        main {
+            flex-direction: column;
+        }
+
+        .left-panel, .right-panel {
+            flex: none; /* Reset any flex settings */
+            flex-direction: column;
+            width: 100%; /* Make each panel full width */
+            order: 0; /* Reset order to ensure left panel is on top */
+        }
+
+        .right-panel {
+            /*order: 1; Set the right panel to be below the left panel */
+        }
+
+        .nav-main-list {
+            flex-direction: row;
+            flex-wrap: wrap
+        }
+    }
+
 
 </style>
