@@ -1,0 +1,220 @@
+---
+interface Props {
+    listElements: object[];
+}
+
+const {
+    listElements = [],
+    primaryLabel = "Role / Company"
+} = Astro.props;
+console.log("LIST WITH DETAILS: ", listElements, primaryLabel);
+---
+
+<main>
+    <table>
+        <thead>
+            <tr>
+                <td style="text-align: center">#</td>
+                <td>{primaryLabel}</td>
+                <td style="text-align: center">
+                    <span class="material-icons">calendar_month</span>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            {listElements.map((row: any, index: number) => (
+                <>
+                    <tr class="row" data-description={row.detail}>
+                        <td data-key=`row-index-${index}` style="font-size: 16px; width: 2%; text-align: center">
+                            <span>{index+1}</span>
+                        </td>
+                        <td>
+                            <div style="font-size: 12pt; color: lightgrey">{row.primary}</div>
+                            <div style="font-size: 10pt; color: grey">{row.secondary}</div>
+                        </td>
+                        <td>
+                            <div style="font-size: 10pt; color: grey">from:  {row.startDate}</div>
+                            <div style="font-size: 10pt; color: grey">to:    {row.endDate}</div>
+                        </td>
+                    </tr>
+                    <tr class="description-row" data-key=`description-row-${index}` style="display: none;" >
+                        <td></td>
+                        <td colspan="2" style="font-size: 10pt; color: grey; padding: 10px; white-space: normal; word-wrap: break-word;">
+                            {row.detail ?? ""}
+                        </td>
+                        <td></td>
+                    </tr>
+                </>
+            ))}
+        </tbody>
+    </table>
+</main>
+<script>
+    const state = {
+        selectedRowIndex: null,
+    };
+
+    function getIndexElement(event: Event){
+        const row = (event.target as HTMLElement).closest('.row');
+        if (!row) {
+            return null;
+        }
+
+        const indexColumn = row.querySelector('td[data-key]');
+        if (!indexColumn) {
+            return null;
+        }
+        return indexColumn;
+    }
+    function onHoverRow(event: Event): void {
+        const indexElement = getIndexElement(event)
+        if (!indexElement) {
+            return;
+        }
+
+        const key = indexElement.getAttribute('data-key');
+        console.log("ON HOVER PRIMARY: ", key);
+
+        indexElement.innerHTML =
+            '<span class="material-icons" style="font-size: 20px; color: lightgrey; transition: transform 0.3s ease">' +
+            '   play_arrow' +
+            '</span>';
+    }
+
+    function onUnhoverRow(event: Event): void {
+        const indexElement = getIndexElement(event)
+        if (!indexElement) {
+            return;
+        }
+        const key = indexElement.getAttribute('data-key');
+        console.log("ON HOVER PRIMARY: ", key);
+
+        indexElement.innerHTML = +key.split("-").at(-1) + 1;
+
+
+
+        const row = (event.target as HTMLElement).closest('.row');
+        if (!row) return;
+
+        // Toggle description visibility
+        const descriptionRow = row.nextElementSibling as HTMLElement;
+        descriptionRow.style.display = 'none';
+
+        // Animation
+        span.style.rotate = '0deg';
+    }
+
+    const rows: NodeListOf<Element> = document.querySelectorAll(".row");
+
+    rows.forEach((row: Element) => {
+        row.addEventListener("mouseenter", onHoverRow);
+    });
+    rows.forEach((row: Element) => {
+        row.addEventListener("mouseleave", onUnhoverRow);
+    });
+
+    function onClickRow(event: Event) {
+        console.log("ON CLICK ROW: ", event);
+
+        const row = (event.target as HTMLElement).closest('.row');
+        if (!row) return;
+
+        const indexElement = getIndexElement(event)
+        if (!indexElement) {
+            return;
+        }
+        const span = indexElement.querySelector('span');
+        if (!span) {
+            return;
+        }
+
+        // Toggle description visibility
+        const descriptionRow = row.nextElementSibling as HTMLElement;
+        descriptionRow.style.display = descriptionRow.style.display === 'none' ? 'table-row' : 'none';
+
+        // Animation
+        span.style.rotate = span.style.rotate === '90deg' ? '0deg' : '90deg';
+    }
+
+    rows.forEach((row: Element) => {
+        row.addEventListener("click", onClickRow);
+    });
+
+    // function onClickPlay(event: Event) {
+    //     console.log("onClickPlay: ", event);
+    //
+    //     // Assuming your icon has the class 'icon'
+    //     const icon = (event.currentTarget as HTMLElement).querySelector('.icon');
+    //
+    //     if (icon) {
+    //         // This will toggle the rotation on and off with each click
+    //         icon.classList.toggle('rotate-90');
+    //     }
+    // }
+
+</script>
+<style>
+    .icon {
+        position: absolute; /* Position the icon absolutely within the td */
+        left: 50%; /* Center the icon horizontally */
+        top: 50%; /* Center the icon vertically */
+        transform: translate(-50%, -50%); /* Offset the icon by half its width and height to truly center it */
+        pointer-events: none; /* This ensures that the icon doesn't interfere with click events */
+    }
+
+    .rotate-90 {
+        rotate: 90deg;
+        transition: transform 0.3s ease; /* this adds a smooth transition effect */
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-between;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead tr {
+        border-bottom: 1px solid rgb(var(--gray));
+        color: rgb(var(--light-gray));
+        border-radius: 1em;
+    }
+
+    thead tr td{
+        padding: 0 1em 0 1em;
+        text-align: left;
+        border-radius: 1em;
+
+    }
+
+    tbody tr td {
+        padding: 0.5em 1em 0.5em 1em;
+        text-align: left;
+    }
+    .row {
+        border-radius: 0.5em;
+    }
+
+
+
+    /* First and last cell to take content width */
+    th:first-child, td:first-child,
+    th:last-child, td:last-child {
+        width: 1%;
+        white-space: nowrap;
+    }
+
+    /* Middle cell to take remaining space */
+    th:nth-child(2), td:nth-child(2) {
+        width: 98%;
+    }
+
+    .row:hover {
+        background-color: #ffffff33;
+        border-radius: 0.5em;
+    }
+</style>
+

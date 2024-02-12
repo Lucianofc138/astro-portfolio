@@ -4,8 +4,8 @@
       "role": "Fullstack developer",
       "company": "Aikologic",
       "startDate": "November 2022",
-      "endDate": "-",
-          "description": "I've contributed to a variety of projects in the mining sector, engaging in tasks ranging from maintenance to development and piloting. My role extended beyond conventional responsibilities, as I initiated a culture of continuous improvement within the team. This involved sharing insightful resources like \"Clean Code\" and relevant articles, fostering discussions to enhance our collective knowledge.\nNotably, I assumed ownership of a significant project, demonstrating leadership and accountability. Additionally, I managed the releases of our main product, ensuring smooth and efficient deployment processes.\nIn the technological realm, I proficiently employ a range of key technologies, including *React*, *VueJS*, *Jest*, *Django*, *Laravel*, *SQLServer*, *IIS*, *Nginx*, and *Docker*. These tools have been instrumental in achieving project success and maintaining high standards of development."
+      "endDate": "Today",
+      "description": "I've contributed to a variety of projects in the mining sector, engaging in tasks ranging from maintenance to development and piloting. My role extended beyond conventional responsibilities, as I initiated a culture of continuous improvement within the team. This involved sharing insightful resources like \"Clean Code\" and relevant articles, fostering discussions to enhance our collective knowledge.\nNotably, I assumed ownership of a significant project, demonstrating leadership and accountability. Additionally, I managed the releases of our main product, ensuring smooth and efficient deployment processes.\nIn the technological realm, I proficiently employ a range of key technologies, including *React*, *VueJS*, *Jest*, *Django*, *Laravel*, *SQLServer*, *IIS*, *Nginx*, and *Docker*. These tools have been instrumental in achieving project success and maintaining high standards of development."
     },
     {
       "role": "Fullstack developer",
@@ -25,7 +25,7 @@
       "role": "Internship and thesis project",
       "company": "Wildsense",
       "startDate": "January 2021",
-      "endDate": "December 2023",
+      "endDate": "December 2021",
       "description": "As part of my industrial internship and academic project at Wildsense, I had the privilege of contributing to a groundbreaking endeavor that involved the integration of a multimodal sensing IoT system with robotics and computer vision, specifically tailored for smart sensing in the agro-industry. This project was part of the FONDEF ANID ID19I10032 initiative, focusing on agricultural applications.\n\nThis experience spanned from January 2021 to December 2021, allowing me to engage in the agile development of a mobile application designed for tracking plant and crop conditions, a critical tool for agronomists. My contributions encompassed the development of both a mobile application using React Native and a web administration platform built with React. We seamlessly utilized Firebase for the backend, ensuring robust functionality and data management.\n\nThis opportunity not only deepened my expertise in mobile app development and web administration but also provided hands-on experience with cutting-edge technology in the field of agriculture. I was proud to be part of a project that leveraged IoT, robotics, and computer vision to benefit the agro-industry, a field that continuously demands innovation and advanced solutions."
     }
   ],

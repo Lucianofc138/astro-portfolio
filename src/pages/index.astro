@@ -2,20 +2,25 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import data from '../data.en.json';
 import Table from '../components/Table.astro'
+import ListWithDetail from "../components/ListWithDetail.astro";
 
 const headers: string[] = ["#", "Role / Position", "Company", "Start date", "Finish date"];
 const rowKeys: string[] = ["role", "company", "startDate", "endDate"];
 const rowsInfo: object[] = data.experience;
+
+const listElements: object[] = rowsInfo.map(e => ({
+	primary: e.role,
+	secondary: e.company,
+	startDate: e.startDate,
+	endDate: e.endDate,
+	detail: e.description
+}));
 ---
 
 <MainLayout>
 	<main>
 		<h2>Experience</h2>
-		<Table
-			headers={headers}
-			rowKeys={rowKeys}
-			rowsInfo={rowsInfo}
-		/>
+		<ListWithDetail listElements={listElements}/>
 	</main>
 </MainLayout>
 <style>
