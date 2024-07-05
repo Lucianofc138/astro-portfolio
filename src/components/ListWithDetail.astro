@@ -1,4 +1,5 @@
 ---
+import {markdownToHtml} from "../utils";
 interface Props {
     listElements: object[];
 }
@@ -7,7 +8,7 @@ const {
     listElements = [],
     primaryLabel = "Role / Company"
 } = Astro.props;
-console.log("LIST WITH DETAILS: ", listElements, primaryLabel);
+// console.log("LIST WITH DETAILS: ", listElements, primaryLabel);
 ---
 
 <main>
@@ -25,30 +26,37 @@ console.log("LIST WITH DETAILS: ", listElements, primaryLabel);
             {listElements.map((row: any, index: number) => (
                 <>
                     <tr class="row" data-description={row.detail}>
-                        <td data-key=`row-index-${index}` style="font-size: 16px; width: 2%; text-align: center">
+                        <td data-key=`row-index-${index}` style="font-size: 16px; min-width: 1.5em; text-align: center; position: relative">
                             <span>{index+1}</span>
+                            <span class="material-icons icon" style="font-size: 20px; color: lightgrey; transition: transform 1s ease; opacity: 0">
+                                play_arrow
+                            </span>
                         </td>
-                        <td>
-                            <div style="font-size: 12pt; color: lightgrey">{row.primary}</div>
-                            <div style="font-size: 10pt; color: grey">{row.secondary}</div>
+                        <td style="display: flex; align-items: center; gap: 1em">
+                            <img src={"/astro-portfolio/" + row.image} style="width: 50px; height: 50px; border-radius: 0.5em"/>
+                            <div style="font-size: 12pt; color: lightgrey; display: flex; flex-direction: column; gap: 0.5em">
+                                <div style="font-size: 12pt; color: lightgrey">{row.primary}</div>
+                                <div style="font-size: 10pt; color: grey">{row.secondary}</div>
+                            </div>
                         </td>
                         <td>
                             <div style="font-size: 10pt; color: grey">from:  {row.startDate}</div>
                             <div style="font-size: 10pt; color: grey">to:    {row.endDate}</div>
                         </td>
                     </tr>
-                    <tr class="description-row" data-key=`description-row-${index}` style="display: none;" >
+                    <tr class="description-row" data-key=`description-row-${index}` style="display: none; height: 20px;" >
                         <td></td>
-                        <td colspan="2" style="font-size: 10pt; color: grey; padding: 10px; white-space: normal; word-wrap: break-word;">
-                            {row.detail ?? ""}
-                        </td>
-                        <td></td>
+                        <td
+                            colspan="2"
+                            style="font-size: 10pt; color: lightgrey; padding: 10px; white-space: normal; word-wrap: break-word;"
+                            set:html={markdownToHtml(row.detail) ?? ""} />
                     </tr>
                 </>
             ))}
         </tbody>
     </table>
 </main>
+
 <script>
     const state = {
         selectedRowIndex: null,
@@ -100,7 +108,7 @@ console.log("LIST WITH DETAILS: ", listElements, primaryLabel);
         const descriptionRow = row.nextElementSibling as HTMLElement;
         descriptionRow.style.display = 'none';
 
-        // Animation
+        Animation
         span.style.rotate = '0deg';
     }
 
@@ -154,67 +162,74 @@ console.log("LIST WITH DETAILS: ", listElements, primaryLabel);
 
 </script>
 <style>
-    .icon {
-        position: absolute; /* Position the icon absolutely within the td */
-        left: 50%; /* Center the icon horizontally */
-        top: 50%; /* Center the icon vertically */
-        transform: translate(-50%, -50%); /* Offset the icon by half its width and height to truly center it */
-        pointer-events: none; /* This ensures that the icon doesn't interfere with click events */
-    }
-
-    .rotate-90 {
-        rotate: 90deg;
-        transition: transform 0.3s ease; /* this adds a smooth transition effect */
-    }
     main {
         display: flex;
         flex-direction: column;
         flex: 1;
         justify-content: space-between;
     }
+
     table {
         width: 100%;
-        border-collapse: collapse;
+        border-spacing: 0;
     }
 
-    thead tr {
+    tbody tr td:first-child {
+        border-top-left-radius: 0.5em;
+        border-bottom-left-radius: 0.5em;
+    }
+
+    tbody tr td:last-child {
+        border-top-right-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+    }
+
+    td {
+        padding: 1em 1em 1em 1em;
+        text-align: left;
+    }
+
+    thead {
         border-bottom: 1px solid rgb(var(--gray));
-        color: rgb(var(--light-gray));
-        border-radius: 1em;
+        color:  rgb(var(--light-gray));
+        /*border-radius: 1em;*/
     }
 
-    thead tr td{
-        padding: 0 1em 0 1em;
-        text-align: left;
-        border-radius: 1em;
-
-    }
-
-    tbody tr td {
-        padding: 0.5em 1em 0.5em 1em;
-        text-align: left;
-    }
-    .row {
+    tbody tr:hover {
+        background-color: rgb(var(--dark-gray));
         border-radius: 0.5em;
     }
 
-
-
     /* First and last cell to take content width */
-    th:first-child, td:first-child,
-    th:last-child, td:last-child {
+    td:first-child {
+        width: 4%;
+        white-space: nowrap;
+    }
+
+    td:last-child {
         width: 1%;
         white-space: nowrap;
     }
 
-    /* Middle cell to take remaining space */
     th:nth-child(2), td:nth-child(2) {
-        width: 98%;
+        width: 95%;
     }
 
-    .row:hover {
-        background-color: #ffffff33;
-        border-radius: 0.5em;
+
+    .icon {
+        position: absolute; /* Position the icon absolutely within the td */
+        left: 50%; /* Center the icon horizontally */
+        top: 50%; /* Center the icon vertically */
+        transform: translate(-50%, -50%); /* Offset the icon by half its width and height to truly center it */
+        pointer-events: none; /* This ensures that the icon doesn't interfere with click events */
+        /*margin: -20px;*/
+        /*padding: -20px;*/
+        border: 1px solid blue;
+    }
+
+    .rotate-90 {
+        rotate: 90deg;
+        transition: transform 0.3s ease; /* this adds a smooth transition effect */
     }
 </style>
 

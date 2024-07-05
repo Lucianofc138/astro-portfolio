@@ -5,6 +5,7 @@
       "company": "Aikologic",
       "startDate": "November 2022",
       "endDate": "Today",
+      "image": "https://github.com/Lucianofc138/astro-portfolio/assets/55565367/f80d1eed-8bb3-45d9-9a8f-de3a915f781c",
       "description": "I've contributed to a variety of projects in the mining sector, engaging in tasks ranging from maintenance to development and piloting. My role extended beyond conventional responsibilities, as I initiated a culture of continuous improvement within the team. This involved sharing insightful resources like \"Clean Code\" and relevant articles, fostering discussions to enhance our collective knowledge.\nNotably, I assumed ownership of a significant project, demonstrating leadership and accountability. Additionally, I managed the releases of our main product, ensuring smooth and efficient deployment processes.\nIn the technological realm, I proficiently employ a range of key technologies, including *React*, *VueJS*, *Jest*, *Django*, *Laravel*, *SQLServer*, *IIS*, *Nginx*, and *Docker*. These tools have been instrumental in achieving project success and maintaining high standards of development."
     },
     {
@@ -12,6 +13,7 @@
       "company": "Wildsense",
       "startDate": "April 2022",
       "endDate": "October 2022",
+      "image": "https://github.com/Lucianofc138/astro-portfolio/assets/55565367/be64131b-8d74-4294-a51b-13e9a2624067",
       "description": "The project was a 6-month endeavor, during which I played a pivotal role in encapsulating AI models developed by a coworker into an API. This allowed for the seamless consumption of these models from a mobile application, which was instrumental in our telemedicine sessions where video was used. Additionally, I created a Minimum Viable Product (MVP) for video calls, which significantly contributed to the project's success. Managing the video transmission from client to server was another crucial aspect of my responsibilities. I also took the lead in researching and implementing state-of-the-art solutions for the mobile app and camera APIs.\nNotably, I led a team of two interns during their practical training, fostering their growth and contributing to the project's success. This role represented a unique opportunity to bridge the gap between AI capabilities and practical telemedicine applications, ensuring the project's smooth operation throughout its duration."
     },
     {
@@ -19,6 +21,7 @@
       "company": "Wildsense",
       "startDate": "January 2022",
       "endDate": "March 2022",
+      "image": "https://github.com/Lucianofc138/astro-portfolio/assets/55565367/be64131b-8d74-4294-a51b-13e9a2624067",
       "description": "As part of my professional internship at Wildsense, I was involved in a transformative project that combined multimodal sensing IoT systems with robotics and computer vision, specifically tailored for smart sensing within the agro-industry, as part of the FONDEF ANID ID19I10032 initiative focused on salmon farming. This opportunity spanned from January 2022 to March 2022.\n\nDuring this period, I played a crucial role in developing a data collection system for a robotic submarine (ROS) used in salmon farm inspections. My responsibilities included data collection in the ROS environment, creating and managing databases using Firestore, and the development of a web application featuring 3D reconstruction of the underwater robot using VTK.JS.\n\nThis practical experience not only allowed me to contribute to cutting-edge technology in the agro-industry but also provided valuable insights into the integration of IoT, robotics, and computer vision. My contributions were integral to the success of this project."
     },
     {
@@ -26,6 +29,7 @@
       "company": "Wildsense",
       "startDate": "January 2021",
       "endDate": "December 2021",
+      "image": "https://github.com/Lucianofc138/astro-portfolio/assets/55565367/be64131b-8d74-4294-a51b-13e9a2624067",
       "description": "As part of my industrial internship and academic project at Wildsense, I had the privilege of contributing to a groundbreaking endeavor that involved the integration of a multimodal sensing IoT system with robotics and computer vision, specifically tailored for smart sensing in the agro-industry. This project was part of the FONDEF ANID ID19I10032 initiative, focusing on agricultural applications.\n\nThis experience spanned from January 2021 to December 2021, allowing me to engage in the agile development of a mobile application designed for tracking plant and crop conditions, a critical tool for agronomists. My contributions encompassed the development of both a mobile application using React Native and a web administration platform built with React. We seamlessly utilized Firebase for the backend, ensuring robust functionality and data management.\n\nThis opportunity not only deepened my expertise in mobile app development and web administration but also provided hands-on experience with cutting-edge technology in the field of agriculture. I was proud to be part of a project that leveraged IoT, robotics, and computer vision to benefit the agro-industry, a field that continuously demands innovation and advanced solutions."
     }
   ],

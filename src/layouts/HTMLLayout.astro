@@ -12,7 +12,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/astro-portfolio/favicon.svg" />
 		<link href="https://fonts.googleapis.com/css2?family=Material+Icons"
 			  rel="stylesheet" />
 		<meta name="generator" content={Astro.generator} />
@@ -32,7 +32,8 @@ const { title } = Astro.props;
 </script>
 <style is:global>
 	:root {
-		--dark-gray: 30, 30, 35;
+		--darker-gray: 18 18 18;
+		--dark-gray: 35 35 35;
 		--gray: 80, 80, 90;
 		--light-gray: 180, 180, 180;
 		--ligher-gray: 230, 230, 230;
@@ -49,7 +50,7 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: #000000;
 		background-size: 224px;
 	}
 	code {
