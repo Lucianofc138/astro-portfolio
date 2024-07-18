@@ -1,31 +1,20 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import data from '../data.en.json';
-import Table from '../components/Table.astro'
-import ListWithDetail from "../components/ListWithDetail.astro";
 import InteractiveListWithDetail from "../components/InteractiveListWithDetail";
+import type { ListWithDetailRow, Experience } from "../types";
 
-const headers: string[] = ["#", "Role / Position", "Company", "Start date", "Finish date"];
-const rowKeys: string[] = ["role", "company", "startDate", "endDate"];
-const rowsInfo: object[] = data.experience;
-
-interface ListWithDetailRow {
-	primary: string;
-	secondary: string;
-	startDate: string;
-	endDate: string;
-	detail: string;
-	image: string;
-}
-
-const listElements: ListWithDetailRow[] = rowsInfo.map(e => ({
-	primary: e.role,
-	secondary: e.company,
-	startDate: e.startDate,
-	endDate: e.endDate,
-	detail: e.description,
-	image: e.image
-}));
+const rowsInfo: Experience[] = data.experience;
+const listElements: ListWithDetailRow[] = rowsInfo.map((e: Experience) => (
+	{
+		primary: e.role,
+		secondary: e.company,
+		startDate: e.startDate,
+		endDate: e.endDate,
+		detail: e.description,
+		image: e.image
+	} as ListWithDetailRow
+));
 ---
 
 <MainLayout>

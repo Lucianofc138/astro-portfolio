@@ -5,6 +5,9 @@
     max-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--dark-gray)) rgb(var(--darker-gray));
+
 }
 
 /*************************************** Any row including header and info rows ***************************************/
@@ -59,4 +62,10 @@
     max-height: 100%; /* Adjust this value as needed */
     overflow-y: auto;
     margin-top: -1em; /* Adjust this value as needed */
+}
+
+.interactive-list-row-detail-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
 }

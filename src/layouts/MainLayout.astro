@@ -122,6 +122,9 @@ const photoURL: string = profilePhotoURL;
     .skills-container {
         flex: 1;
         background-color: rgb(var(--darker-gray));
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(var(--dark-gray)) rgb(var(--darker-gray));
     }
 
     /*************************************************** Right panel **************************************************/
@@ -129,7 +132,7 @@ const photoURL: string = profilePhotoURL;
         display: flex;
         flex-direction: column;
         flex: 4;
-        background-image: linear-gradient(to bottom, orange, rgb(var(--darker-gray)) 50%, rgb(var(--darker-gray)));
+        background-image: linear-gradient(to bottom, orange, rgb(var(--darker-gray)) 50vh, rgb(var(--darker-gray)));
         color: white;
         max-height: 100%;
     }
@@ -143,13 +146,14 @@ const photoURL: string = profilePhotoURL;
     }
 
     .header-image {
+        border-radius: 0.5em;
         background-color: orange;
         /*background-color: lightgrey;*/
         height: 200px;
         width: 200px;
         object-fit: cover;
-        -webkit-filter: opacity(80%);
-        /*filter: opacity(80%);*/
+        -webkit-filter: opacity(80%); /* Safari */
+        filter: opacity(80%); /* Chrome, Firefox */
     }
     .header-info {
         flex: 1;
@@ -171,6 +175,7 @@ const photoURL: string = profilePhotoURL;
     @media (max-width: 768px) {
         main {
             flex-direction: column;
+            height: 100%;
         }
 
         .left-panel, .right-panel {

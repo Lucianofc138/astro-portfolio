@@ -1,44 +1,46 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import data from '../data.en.json';
-import Table from '../components/Table.astro'
+import InteractiveListWithDetail from "../components/InteractiveListWithDetail";
+import type { ListWithDetailRow, Project } from "../types";
 
-const headers: string[] = ["#", "Name", "Start date", "Finish date"];
-const rowKeys: string[] = ["name", "startDate", "endDate"];
-const rowsInfo: object[] = data.projects;
+const rowsInfo: Project[] = data.projects;
+const listElements: ListWithDetailRow[] = rowsInfo.map((p: Project) => (
+	{
+		primary: p.name,
+		secondary: p.secondary,
+		startDate: p.startDate,
+		endDate: p.endDate,
+		detail: p.description,
+		image: p.image,
+		links: p.links
+	} as ListWithDetailRow
+));
 ---
 
 <MainLayout>
 	<main>
 		<h2>Projects</h2>
-		<Table
-			headers={headers}
-			rowKeys={rowKeys}
-			rowsInfo={rowsInfo}
+		<InteractiveListWithDetail
+			client:load
+			listElements={listElements}
+			primaryLabel="Name"
 		/>
 	</main>
 </MainLayout>
 <style>
 	main {
-		font-style: normal;
 		display: flex;
-		flex: 1;
 		flex-direction: column;
+		/*border: 2px solid blue;*/
+		max-height: 100%;
+		overflow-y: hidden;
+		font-style: normal;
 		gap: 1em;
 	}
-	table {
-		/*background-color: lightpink;*/
-		width: 100%;
-		border-collapse: collapse;
-	}
-	thead {
-		border-bottom: 1px solid rgb(var(--light-gray));
-	}
-	th, td {
-		padding: 1em;
-		text-align: left;
-	}
-	.row:hover {
-		background-color: rgb(var(--gray));
+
+	h2 {
+		font-size: 42px;
+		margin: 0 0 10px 0.5em;
 	}
 </style>

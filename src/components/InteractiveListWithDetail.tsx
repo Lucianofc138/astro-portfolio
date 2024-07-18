@@ -2,17 +2,19 @@ import { useState, useEffect } from "preact/hooks"
 
 import "./InteractiveListWithDetail.css"
 import {markdownToHtml} from "../utils";
+import type {ListWithDetailRow} from "../types";
 
 const TRANSITION_SECONDS: number = 0.4;
+
+interface InteractiveListWithDetailProps {
+    listElements: ListWithDetailRow[];
+    primaryLabel: string;
+}
 export default function InteractiveListWithDetail({
     listElements = [],
     primaryLabel = ""
-}) {
+}: InteractiveListWithDetailProps) {
     const [selectedRowIndex, setSelectedRowIndex] = useState<number | null>(1);
-
-    useEffect(() => {
-        console.log("ON MOUNT InteractiveListWithDetail: listElements:", listElements);
-    }, []);
 
     return (
         <main className="interactive-list-container">
@@ -25,7 +27,7 @@ export default function InteractiveListWithDetail({
                     </span>
                 </div>
             </div>
-            {listElements.map((row: any, index: number) => (
+            {listElements.map((row: ListWithDetailRow, index: number) => (
                 <InteractiveListWithDetailRow
                     row={row}
                     index={index}
@@ -38,7 +40,7 @@ export default function InteractiveListWithDetail({
                     }}
                 />
             ))}
-            { selectedRowIndex !== null && <RowDetails detail={listElements[selectedRowIndex].detail} />}
+            { selectedRowIndex !== null && <RowDetails detail={listElements[selectedRowIndex].detail} links={listElements[selectedRowIndex].links} />}
      </main>
     )
 }
@@ -113,12 +115,9 @@ function InteractiveListWithDetailRow({
     )
 }
 
-type symbols ="play" | "x";
-
 interface IndexToPlayIconProps {
     index: number;
     isFocused: boolean;
-    // hovered: boolean;
 }
 function IndexToPlayIcon({
     index,
@@ -146,11 +145,25 @@ function IndexToPlayIcon({
 }
 
 function RowDetails({
-    detail
-} : { detail: string }) {
+    detail,
+    links
+} : {
+    detail: string,
+    links?: Array<{ name: string; url: string }>
+}) {
     return (
-        <div className="interactive-list-row-detail"
-             dangerouslySetInnerHTML={{ __html: markdownToHtml(detail) }}
-        />
+        <>
+            <div className="interactive-list-row-detail"
+                 dangerouslySetInnerHTML={{ __html: markdownToHtml(detail) }}
+            />
+            { links && links.length > 0 && <div className="interactive-list-row-detail-links">
+                {links.map((link, index) => (
+                    <a href={link.url} target="_blank" rel="noreferrer" key={index}>
+                        {link.name}
+                    </a>
+                ))}
+            </div>}
+        </>
+
     );
 }
