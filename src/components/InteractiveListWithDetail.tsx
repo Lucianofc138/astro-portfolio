@@ -3,6 +3,7 @@ import { useState, useEffect } from "preact/hooks"
 import "./InteractiveListWithDetail.css"
 import {markdownToHtml} from "../utils";
 import type {ListWithDetailRow} from "../types";
+import {basePhotosURL} from "../constants";
 
 const TRANSITION_SECONDS: number = 0.4;
 
@@ -101,7 +102,7 @@ function InteractiveListWithDetailRow({
                 <IndexToPlayIcon index={index} isHovered={isHovered} isFocused={isFocused} />
             </div>
             <div style="display: flex; flex-direction: row; gap: 0.5em">
-                <img src={row.image} style="width: 50px; height: 50px; border-radius: 0.5em"/>
+                <img src={basePhotosURL + row.image} style="width: 50px; height: 50px; border-radius: 0.5em"/>
                 <div style="display: flex; flex-direction: column; gap: 0.5em">
                     <div style="font-size: 12pt; color: lightgrey">{row.primary}</div>
                     <div style="font-size: 10pt; color: grey">{row.secondary}</div>
