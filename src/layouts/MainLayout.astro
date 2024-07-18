@@ -2,6 +2,7 @@
 import HTMLLayout from '../layouts/HTMLLayout.astro';
 import SkillsList from '../components/SkillsList.astro';
 import data from "../data.en.json";
+import { profilePhotoURL } from "../constants";
 
 interface Skill {
     name: string;
@@ -9,6 +10,7 @@ interface Skill {
     keywords: string[];
 }
 const skills: Skill[] = data.skills;
+const photoURL: string = profilePhotoURL;
 ---
 
 <HTMLLayout title="Spotifolio">
@@ -52,16 +54,15 @@ const skills: Skill[] = data.skills;
                 <SkillsList skills={skills} />
             </div>
         </div>
-        <div class="right-panel" style="border-radius: 1em">
+        <div class="right-panel" style="border-radius: 1em;">
             <header>
-                <div class="header-image" />
-                <!-- <img class="header-image" src="photo.png" /> -->
+                <img class="header-image" src={photoURL} />
                 <div class="header-info">
-                    <h1 style="flex: 1">Luciano Flores</h1>
-                    <span style="align-self: flex-end">Fullstack developer / Software engineer</span>
+                    <h1>Luciano Flores</h1>
+                    <h3 style="font-size: 24px">Fullstack developer / Software engineer</h3>
                 </div>
             </header>
-            <div class="main-content" style="flex-direction: row">
+            <div class="main-content">
                 <slot />
             </div>
         </div>
@@ -70,18 +71,18 @@ const skills: Skill[] = data.skills;
 
 <style>
     main {
-        /*background-color: white;*/
         height: 98vh;
         display: flex;
         flex-direction: row;
         gap: 1em;
+        /*overflow: hidden;*/
     }
+
     .rounded {
         border-radius: 1em;
     }
-    .spacing {
-        padding: 1em;
-    }
+
+    /*************************************************** Left panel ***************************************************/
     .left-panel {
         display: flex;
         flex: 1;
@@ -91,7 +92,7 @@ const skills: Skill[] = data.skills;
         color: rgb(var(--light-gray));
     }
     nav {
-        background-color: rgb(var(--dark-gray));
+        background-color: rgb(var(--darker-gray));
         padding: 0.5em;
     }
     .nav-main-list {
@@ -120,42 +121,94 @@ const skills: Skill[] = data.skills;
 
     .skills-container {
         flex: 1;
-        background-color: rgb(var(--dark-gray));
+        background-color: rgb(var(--darker-gray));
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(var(--dark-gray)) rgb(var(--darker-gray));
     }
+
+    /*************************************************** Right panel **************************************************/
     .right-panel {
         display: flex;
         flex-direction: column;
         flex: 4;
-        background-color: rgb(var(--dark-gray));
+        background-image: linear-gradient(to bottom, orange, rgb(var(--darker-gray)) 50vh, rgb(var(--darker-gray)));
         color: white;
-        overflow: clip;
+        max-height: 100%;
     }
+
     header {
-        /*background-color: lightpink;*/
         display: flex;
         flex-direction: row;
-        flex: 1;
+        align-items: flex-end;
         padding: 2em;
-        gap: 1em;
+        gap: 2em;
     }
+
     .header-image {
+        border-radius: 0.5em;
         background-color: orange;
+        /*background-color: lightgrey;*/
         height: 200px;
         width: 200px;
-        margin-right: 1em;
+        object-fit: cover;
+        -webkit-filter: opacity(80%); /* Safari */
+        filter: opacity(80%); /* Chrome, Firefox */
     }
     .header-info {
-        /*background-color: blueviolet;*/
         flex: 1;
         flex-direction: column;
     }
     h1 {
         font-size: 64px;
-    }
-    .main-content {
-        display: flex;
-        flex: 3;
-        padding: 2em;
+        margin-top: 0;
+        margin-bottom: 0.25em;
     }
 
+    .main-content {
+        flex: 1;
+        padding: 1em;
+        background-color: #12121255;
+        overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+        main {
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .left-panel, .right-panel {
+            flex: none; /* Reset any flex settings */
+            flex-direction: column;
+            width: 100%; /* Make each panel full width */
+            order: 0; /* Reset order to ensure left panel is on top */
+        }
+
+        .right-panel {
+            /*order: 1; Set the right panel to be below the left panel */
+        }
+
+        .nav-main-list {
+            flex-direction: row;
+            flex-wrap: wrap
+        }
+
+        .skills-container {
+            display: none;
+        }
+
+        header {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        .header-image {
+            align-self: center;
+        }
+        .header-info {
+            text-align: center;
+        }
+    }
 </style>

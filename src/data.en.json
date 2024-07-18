@@ -4,14 +4,16 @@
       "role": "Fullstack developer",
       "company": "Aikologic",
       "startDate": "November 2022",
-      "endDate": "-",
-          "description": "I've contributed to a variety of projects in the mining sector, engaging in tasks ranging from maintenance to development and piloting. My role extended beyond conventional responsibilities, as I initiated a culture of continuous improvement within the team. This involved sharing insightful resources like \"Clean Code\" and relevant articles, fostering discussions to enhance our collective knowledge.\nNotably, I assumed ownership of a significant project, demonstrating leadership and accountability. Additionally, I managed the releases of our main product, ensuring smooth and efficient deployment processes.\nIn the technological realm, I proficiently employ a range of key technologies, including *React*, *VueJS*, *Jest*, *Django*, *Laravel*, *SQLServer*, *IIS*, *Nginx*, and *Docker*. These tools have been instrumental in achieving project success and maintaining high standards of development."
+      "endDate": "Today",
+      "image": "aiko-logo.jpeg",
+      "description": "I've contributed to a variety of projects in the mining sector, engaging in tasks ranging from maintenance to development and piloting. My role extended beyond conventional responsibilities, as I initiated a culture of continuous improvement within the team. This involved sharing insightful resources like \"Clean Code\" and relevant articles, fostering discussions to enhance our collective knowledge.\nNotably, I assumed ownership of a significant project, demonstrating leadership and accountability. Additionally, I managed the releases of our main product, ensuring smooth and efficient deployment processes.\nIn the technological realm, I proficiently employ a range of key technologies, including *React*, *VueJS*, *Jest*, *Django*, *Laravel*, *SQLServer*, *IIS*, *Nginx*, and *Docker*. These tools have been instrumental in achieving project success and maintaining high standards of development."
     },
     {
       "role": "Fullstack developer",
       "company": "Wildsense",
       "startDate": "April 2022",
       "endDate": "October 2022",
+      "image": "wildsense-logo.jpeg",
       "description": "The project was a 6-month endeavor, during which I played a pivotal role in encapsulating AI models developed by a coworker into an API. This allowed for the seamless consumption of these models from a mobile application, which was instrumental in our telemedicine sessions where video was used. Additionally, I created a Minimum Viable Product (MVP) for video calls, which significantly contributed to the project's success. Managing the video transmission from client to server was another crucial aspect of my responsibilities. I also took the lead in researching and implementing state-of-the-art solutions for the mobile app and camera APIs.\nNotably, I led a team of two interns during their practical training, fostering their growth and contributing to the project's success. This role represented a unique opportunity to bridge the gap between AI capabilities and practical telemedicine applications, ensuring the project's smooth operation throughout its duration."
     },
     {
@@ -19,13 +21,15 @@
       "company": "Wildsense",
       "startDate": "January 2022",
       "endDate": "March 2022",
+      "image": "wildsense-logo.jpeg",
       "description": "As part of my professional internship at Wildsense, I was involved in a transformative project that combined multimodal sensing IoT systems with robotics and computer vision, specifically tailored for smart sensing within the agro-industry, as part of the FONDEF ANID ID19I10032 initiative focused on salmon farming. This opportunity spanned from January 2022 to March 2022.\n\nDuring this period, I played a crucial role in developing a data collection system for a robotic submarine (ROS) used in salmon farm inspections. My responsibilities included data collection in the ROS environment, creating and managing databases using Firestore, and the development of a web application featuring 3D reconstruction of the underwater robot using VTK.JS.\n\nThis practical experience not only allowed me to contribute to cutting-edge technology in the agro-industry but also provided valuable insights into the integration of IoT, robotics, and computer vision. My contributions were integral to the success of this project."
     },
     {
       "role": "Internship and thesis project",
       "company": "Wildsense",
       "startDate": "January 2021",
-      "endDate": "December 2023",
+      "endDate": "December 2021",
+      "image": "wildsense-logo.jpeg",
       "description": "As part of my industrial internship and academic project at Wildsense, I had the privilege of contributing to a groundbreaking endeavor that involved the integration of a multimodal sensing IoT system with robotics and computer vision, specifically tailored for smart sensing in the agro-industry. This project was part of the FONDEF ANID ID19I10032 initiative, focusing on agricultural applications.\n\nThis experience spanned from January 2021 to December 2021, allowing me to engage in the agile development of a mobile application designed for tracking plant and crop conditions, a critical tool for agronomists. My contributions encompassed the development of both a mobile application using React Native and a web administration platform built with React. We seamlessly utilized Firebase for the backend, ensuring robust functionality and data management.\n\nThis opportunity not only deepened my expertise in mobile app development and web administration but also provided hands-on experience with cutting-edge technology in the field of agriculture. I was proud to be part of a project that leveraged IoT, robotics, and computer vision to benefit the agro-industry, a field that continuously demands innovation and advanced solutions."
     }
   ],
@@ -35,37 +39,81 @@
       "institution": "Universidad Técnica Federico Santa María",
       "startDate": "March 2016",
       "endDate": "April 2022",
-      "description": ""
+      "description": "",
+      "image": "utfsm-logo.webp"
     },
     {
       "degree": "School",
       "institution": "Scuola Italiana Arturo Dell'Oro Valparaíso",
       "startDate": "March 2003",
       "endDate": "December 2015",
-      "description": ""
+      "description": "",
+      "image": "siv-logo.jpg"
     }
   ],
   "projects": [
     {
+      "name": "Anime To Watch",
+      "secondary": "Entertainment tool page",
+      "startDate": "July 2024",
+      "endDate": "-",
+      "description": "A tool to help you find anime to watch. It uses the Anilist API to fetch anime data and displays it in a user-friendly way.",
+      "image": "favicon.svg",
+      "links": [
+        {
+          "name": "source code",
+          "url": "https://github.com/Lucianofc138/astro-portfolio"
+        }
+      ]
+    },
+    {
       "name": "Spotifolio",
+      "secondary": "Portfolio page",
       "startDate": "November 2023",
       "endDate": "-",
-      "description": "Basically this whole page inspired on Spotify web layout. A place to share my professional information."
+      "description": "Basically this whole page inspired on Spotify web layout. A place to share my professional information.",
+      "image": "favicon.svg",
+      "links": [
+        {
+          "name": "page",
+          "url": "https://lucianofc138.github.io/astro-portfolio/"
+        },
+        {
+          "name": "source code",
+          "url": "https://github.com/Lucianofc138/astro-portfolio"
+        }
+      ]
     },
     {
       "name": "Stocky",
+      "secondary": "ELO328 - Digital Image Processing (University project)",
       "startDate": "October 2020",
       "endDate": "December 2020",
-      "description": "ELO328 - Digital Image Processing (University project)\nDevelopment of a computer vision-based solution for supermarkets and similar establishments, providing alerts when a product is out of stock or misplaced on the shelves."
+      "description": "Computer vision-based solution for supermarkets and similar establishments, providing alerts when a product is out of stock or misplaced on the shelves.",
+      "image": "favicon.svg",
+      "links": [
+        {
+          "name": "source code",
+          "url": "https://github.com/Lucianofc138/Stocky"
+        }
+      ]
     },
     {
       "name": "Smart Scheduler USM",
+      "secondary": "Independent project",
       "startDate": "September 2019",
       "endDate": "November 2019",
-      "description": "Independent project\nDevelopment of a tool for students at UTFSM that aims to assist with course selection each semester, optimizing the final schedule and avoiding schedule conflicts between different subjects."
+      "description": "Tool for students at UTFSM that aims to assist with course selection each semester, optimizing the final schedule and avoiding schedule conflicts between different subjects.",
+      "image": "favicon.svg",
+      "links": [
+        {
+          "name": "source code",
+          "url": "https://github.com/Lucianofc138/smart_scheduler_usm"
+        }
+      ]
     }
   ],
-  "about-me": "I am interested in constantly learning about new technologies, especially in software development. I have worked with web and mobile apps, computer vision, and data mining. I stand out for being proactive, self-taught, and creative, also enhancing teamwork.",
+  "about-me": "I have a strong passion for continuously learning and exploring new technologies, with a particular focus on software development. My experience spans web and mobile applications, computer vision, and data mining. I am known for my proactive approach, self-taught expertise, and creativity, all of which enhance my ability to work effectively in team settings.",
   "skills": [
     {
       "name": "Python",

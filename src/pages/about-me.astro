@@ -9,12 +9,26 @@ const textByParagraphs: string[] = richTextDescription.split("\n");
 
 <MainLayout>
 	<main>
-		<h2>About Me</h2>
+		<h2>Blog</h2>
 		{textByParagraphs.map(text => <p>{text}</p>)}
 	</main>
 </MainLayout>
-
 <style>
 	main {
+		display: flex;
+		flex-direction: column;
+		/*border: 2px solid blue;*/
+		max-height: 100%;
+		overflow-y: hidden;
+		font-style: normal;
+		gap: 1em;
+		margin: 1em;
 	}
+
+	h2 {
+		font-size: 42px;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
 </style>

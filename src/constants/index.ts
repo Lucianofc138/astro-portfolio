@@ -1,0 +1,1 @@
+export const profilePhotoURL: string = "/astro-portfolio/photo.png";

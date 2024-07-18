@@ -1,0 +1,71 @@
+.interactive-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--dark-gray)) rgb(var(--darker-gray));
+
+}
+
+/*************************************** Any row including header and info rows ***************************************/
+.interactive-list-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em 1em 0.5em 1em;
+    gap: 0.5em;
+}
+
+.interactive-list-row > div:first-child {
+    flex: 0 0 25px;
+    text-align: center;
+}
+
+.interactive-list-row > div:nth-child(2) {
+    flex: 1;
+}
+
+.interactive-list-row > div:last-child {
+    flex: 0 0 150px;
+    /*border: 1px solid red;*/
+}
+
+@media (max-width: 768px) {
+    .interactive-list-row > div:last-child {
+        flex: 0 0 100px;
+    }
+}
+
+/***************************************************** Header row *****************************************************/
+
+.interactive-list-header {
+    border-bottom: 1px solid rgb(var(--gray));
+    color:  rgb(var(--light-gray));
+}
+
+/***************************************************** Info row *****************************************************/
+
+.interactive-list-info-row {
+    border-radius: 0.5em;
+    align-items: center;
+}
+
+.interactive-list-info-row:hover {
+    background-color: #ffffff33;
+}
+
+.interactive-list-row-detail {
+    color: lightgrey;
+    max-height: 100%; /* Adjust this value as needed */
+    overflow-y: auto;
+    margin-top: -1em; /* Adjust this value as needed */
+}
+
+.interactive-list-row-detail-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}

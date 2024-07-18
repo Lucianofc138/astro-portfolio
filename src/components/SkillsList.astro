@@ -65,7 +65,7 @@ const { skills= [] } = Astro.props;
         flex-wrap: wrap;
     }
     li {
-        background-color: darkslategray;
+        background-color: rgb(var(--dark-gray));
         border-radius: 1em;
         padding: 0 1em 0 1em;
         margin: 0.5em;
@@ -73,6 +73,23 @@ const { skills= [] } = Astro.props;
 
     .highlighted {
         background-color: #111111;
+    }
+
+    @media (max-width: 768px) {
+        main {
+            padding: 0;
+        }
+        input {
+            display: none;
+        }
+        ul {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+        li {
+            white-space: nowrap;
+            margin: 0 0.5em 0 0.5em;
+        }
     }
 </style>
 
